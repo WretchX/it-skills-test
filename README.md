@@ -18,13 +18,13 @@ This IT skills test relies on a 3 PCs.
 **5.** Save the .ini and test all queries and values before proceeding
 
 ## Setting up PC2:
-**0.** Install Google Chrome
+**0.** Install Google Chrome  
 **1.** Ensure there is a password associated with the user account, as we will be sharing files over the network from this account. Keep in mind the tester may have to enter this to open the network shared file on PC1 depending in which route they go.
 **2.** Edit the included Google Chrome shortcut to match the path to ScamExample.html, i.e. "C:\Program Files\Google\Chrome\Application\chrome.exe" --kiosk C:\Path\To\ScamExample.html
-   (kiosk mode disables the exiting of fullscreen using F11)
-**3.** Pop the esc key out of the keyboard
-**4.** Place the 'share' folder on desktop. Inside is a picture of a cat. Any photo will work, but it must be called "photo.jpg" to pass the test on PC1
-**5.** Use the modified Chrome shortcut to open the scam example popup, as simply opening the html file will not enable kiosk mode
+   (kiosk mode disables the exiting of fullscreen using F11)  
+**3.** Pop the esc key out of the keyboard  
+**4.** Place the 'share' folder on desktop. Inside is a picture of a cat. Any photo will work, but it must be called "photo.jpg" to pass the test on PC1  
+**5.** Use the modified Chrome shortcut to open the scam example popup, as simply opening the html file will not enable kiosk mode  
 
 ## PC3:
 **0.** Literally just need the bios version from this one. 
