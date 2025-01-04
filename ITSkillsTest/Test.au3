@@ -15,10 +15,12 @@ Global $resultsFilePath = @ScriptDir & "\" & $resultsFile
 
 Global $printerPageTitle, $biosVersion, $iSeconds
 Global $photoName = "photo.jpg"
+Global $firstOpen = False
 
 If FileExists($iniFilePath) = False Then ;Checks if settings.ini exists. If not, creates it and opens the program once it exists.
 	ProgressOn(@ScriptName, "Creating Settings file....", "0%")
 	create_ini()
+	$firstOpen = True
 	For $i = 10 To 100 Step 10
 		Sleep(200)
 		ProgressSet($i, $i & "%")
@@ -28,8 +30,11 @@ If FileExists($iniFilePath) = False Then ;Checks if settings.ini exists. If not,
 		Sleep(100)
 	Until FileExists($iniFilePath) = True
 	ProgressOff()
-	MsgBox(4,"Setup","Values must be configured. Refer to comments in ini.")
+	MsgBox(48+0,"New Environment Setup","Values must be configured. Please refer to README or comments in settings file" & @CRLF & @CRLF & _
+						"Clicking OK will open the settings file for configuration" & @CRLF & @CRLF & _
+						"After the values are configured, please re-run the program and test them out")
 	ShellExecute($iniFilePath)
+	Exit 189
 Else
 	Sleep(10)
 EndIf
@@ -40,11 +45,13 @@ EndIf
 
 ini_read()
 
-If $printerPageTitle = "" Or $biosVersion = "" Or $iSeconds = "" or $photoName = "" Then
-	If MsgBox(4+16, "ini problem", "At least one value inside the settings.ini file is blank. The test will not be completable." & @CRLF & @CRLF & _
-								"Click yes to exit and open the settings file, or click no to continue anyway") = 6 Then
-	ShellExecute($iniFilePath)
-	Exit 369
+If $firstOpen = False Then
+	If $printerPageTitle = "" Or $biosVersion = "" Or $iSeconds = "" or $photoName = "" Then
+		If MsgBox(4+16, "ini problem", "At least one value inside the settings.ini file is blank. The test will not be completable." & @CRLF & @CRLF & _
+									"Click yes to exit and open the settings file, or click no to continue anyway") = 6 Then
+		ShellExecute($iniFilePath)
+		Exit 369
+		EndIf
 	EndIf
 EndIf
 
@@ -110,7 +117,7 @@ GUISetState(@SW_SHOW)
 Check()
 AdlibRegister("Check", 500)
 AdlibRegister("UpdateTimer", 1000)
-AdlibRegister("Check2", 2000)
+AdlibRegister("Check2", 1000)
 
 #Region Main Loop
 While 1
@@ -156,9 +163,9 @@ Func Check() ;Adlibbed
 	EndIf
 
 	; Check if BIOS version input is correct
-	If GUICtrlRead($Input3) == $BIOSVersion Then
+	If StringLower(GUICtrlRead($Input3)) == StringLower($BIOSVersion) Then
 		GUICtrlSetData($lab_pf3, $strPass)
-	ElseIf GUICtrlRead($Input3) <> $BIOSVersion Then
+	ElseIf StringLower(GUICtrlRead($Input3)) <> StringLower($BIOSVersion) Then
 		GUICtrlSetData($lab_pf3, $strFail)
 	EndIf
 
@@ -278,7 +285,7 @@ EndFunc
 ;~     $oHTTP.send($Packet)
 ;~ EndFunc
 
-Func Check2() ;adlibbed every 2 seconds
+Func Check2() ;adlibbed every 1 second
 	IsActiveChromeTabOpen($printerPageTitle)
 	IsSharedPhotoOpen($photoName)
 EndFunc
