@@ -8,9 +8,9 @@ This IT skills test relies on a 3 PCs.
 
 ## Setting up PC1:
 0. Install AutoIt https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip
-    - IF at any point you get a VCRUNTIME140.dll error, just install these visual c++ redists 
-        [x86: vc_redist.x86.exehttps://aka.ms/vs/16/release/vc_redist.x86.exe](https://aka.ms/vs/16/release/vc_redist.x86.exe)
-        [x64: vc_redist.x64.exehttps://aka.ms/vs/16/release/vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+    - IF at any point you get a VCRUNTIME140.dll error, just install these visual c++ redists:  
+        [x86: vc_redist.x86.exehttps://aka.ms/vs/16/release/vc_redist.x86.exe](https://aka.ms/vs/16/release/vc_redist.x86.exe)  
+        [x64: vc_redist.x64.exehttps://aka.ms/vs/16/release/vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe)  
 1. Install Google Chrome
 2. Ensure network sharing is turned on
 3. Right click "Test.au3" and "Run script"
