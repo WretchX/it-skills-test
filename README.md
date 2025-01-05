@@ -2,7 +2,7 @@
 
 This IT skills test relies on 3 PCs.
 
-**PC1** - Where the main test is run from 
+**PC1** - Where the main test is run from   
 **PC2** - Where the fake scam popup is run from, and where the file is shared from  
 **PC3** - Any PC to get a bios version from  
 
