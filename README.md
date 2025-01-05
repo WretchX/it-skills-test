@@ -18,13 +18,14 @@ This IT skills test relies on 3 PCs.
 5. Save the .ini and test all queries and values before proceeding
 
 ## Setting up PC2:
-0. Install Google Chrome  
-1. Ensure there is a password associated with the user account, as we will be sharing files over the network from this account. Keep in mind the tester may have to enter this to open the network shared file on PC1 depending in which route they go.
-2. Edit the included Google Chrome shortcut to match the path to ScamExample.html, i.e. `"C:\Program Files\Google\Chrome\Application\chrome.exe" --kiosk C:\Path\To\ScamExample.html`
-   *(we use kiosk mode to disable the ability to exit fullscreen using F11)*  
-3. Pop the esc key out of PC2's keyboard because that's cheating  
-4. Place the 'share' folder on desktop. Inside is a picture of a cat. Any photo will work, but it must be called "photo.jpg" to pass the test on PC1
-5. Use the modified Chrome shortcut to open the scam example popup, as simply opening the html file will not enable kiosk mode  
+0. Install Google Chrome
+1. Ensure network sharing is turned on
+2. Ensure there is a password associated with the user account, as we will be sharing files over the network from this account. Keep in mind the tester may have to enter this to open the network shared file on PC1 depending in which route they go.
+3. Edit the included Google Chrome shortcut to match the path to ScamExample.html, i.e. `"C:\Program Files\Google\Chrome\Application\chrome.exe" --kiosk C:\Path\To\ScamExample.html`
+   *(we use kiosk mode to disable the ability to exit fullscreen using F11), just like on an actual scam popup* 
+4. Pop the esc key out of PC2's keyboard because that's cheating  
+5. Place the 'share' folder on desktop. Inside is a picture of a cat. Any photo will work, but it must be called "photo.jpg" to pass the test on PC1
+6. Use the modified Chrome shortcut to open the scam example popup, as simply opening the html file will not enable kiosk mode  
 
 ## PC3:
 0. Literally just need the bios version from this one.
@@ -47,4 +48,7 @@ After the skills test has been complete, a simple checklist can reset the enviro
 **printerpagetitle** - A test query will continuously check if the user has successfully visited the correct printer configuration page. This is a string in string search, so if the full title is `HP Printer - Google Chrome`, simply putting `HP Printer` will do fine.  
 **biosversion** - Just put the BIOS version of PC3 here.  
 **timelimit** - The time limit __in seconds__ you will give the test taker. Somewhere around 12-15 minutes is what most experienced candidates take.
+
+## Final notes
+- It does not matter how you disable the internet connection, how you go about doing that exercise is 100% your discretion. All the program checks for is a response from google.com. I unplugged the CAT6 cable from the wall.
         
