@@ -1,20 +1,20 @@
 ![image](https://github.com/user-attachments/assets/ab4f5941-cf5a-4563-a73b-6c07a56c022e)
 
-This IT skills test relies on a 3 PCs.
+This IT skills test relies on 3 PCs.
 
-**PC1** - Where the main test is run from  
-**PC2** - Where the fake scam popup is run, and where the file is shared from  
+**PC1** - Where the main test is run from 
+**PC2** - Where the fake scam popup is run from, and where the file is shared from  
 **PC3** - Any PC to get a bios version from  
 
 ## Setting up PC1:
 0. Install AutoIt https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip
-    - IF at any point you get a VCRUNTIME140.dll error, just install these visual c++ redists:  
+    - If at any point you get a VCRUNTIME140.dll error, just install these visual c++ redists:  
         [x86: vc_redist.x86.exehttps://aka.ms/vs/16/release/vc_redist.x86.exe](https://aka.ms/vs/16/release/vc_redist.x86.exe)  
         [x64: vc_redist.x64.exehttps://aka.ms/vs/16/release/vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe)  
 1. Install Google Chrome
 2. Ensure network sharing is turned on
 3. Right click "Test.au3" and "Run script"
-4. You will get a prompt to assign 3 values to a settings.ini file based on your environment
+4. You will get a prompt to assign 3 values to a settings.ini file based on your environment _(see "configuring settings" below for more info)_
 5. Save the .ini and test all queries and values before proceeding
 
 ## Setting up PC2:
@@ -42,5 +42,9 @@ After the skills test has been complete, a simple checklist can reset the enviro
 2. Delete recent browser history from Chrome on PC1
 3. Disable the internet however you wish on PC1
 4. Stop sharing the file on PC2
-      
+
+## Configuring the settings
+**printerpagetitle** - A test query will continuously check if the user has successfully visited the correct printer configuration page. This is a string in string search, so if the full title is `HP Printer - Google Chrome`, simply putting `HP Printer` will do fine.  
+**biosversion** - Just put the BIOS version of PC3 here.  
+**timelimit** - The time limit __in seconds__ you will give the test taker. Somewhere around 12-15 minutes is what most experienced candidates take.
         
