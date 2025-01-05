@@ -506,7 +506,7 @@ Func create_ini()
 	$testfile = ($iniFilePath)
 	FileWrite($testfile, "[variables]" & @CRLF)
 	FileWrite($testfile, "printerpagetitle=" & @CRLF)
-	FileWrite($testfile, ";the full, exact window title of the printer configuration page" & @CRLF)
+	FileWrite($testfile, ";full or partial window title of the printer configuration page" & @CRLF)
 	FileWrite($testfile, " " & @CRLF)
 
 	FileWrite($testfile, "biosversion=" & @CRLF)
