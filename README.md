@@ -45,10 +45,10 @@ After the skills test has been complete, a simple checklist can reset the enviro
 4. Stop sharing the file on PC2
 
 ## Configuring the settings
-**printerpagetitle** - A test query will continuously check if the user has successfully visited the correct printer configuration page. This is a string in string search, so if the full title is `HP Printer - Google Chrome`, simply putting `HP Printer` will do fine.  
-**biosversion** - Just put the BIOS version of PC3 here.  
-**timelimit** - The time limit __in seconds__ you will give the test taker. Somewhere around 12-15 minutes is what most experienced candidates take.
+- **printerpagetitle** - A test query will continuously check if the user has successfully visited the correct printer configuration page. This is a string in string search, so if the full title is `HP Printer - Google Chrome`, simply putting `HP Printer` will do fine.  
+- **biosversion** - Just put the BIOS version of PC3 here.  
+- **timelimit** - The time limit __in seconds__ you will give the test taker. Somewhere around 12-15 minutes is what most experienced candidates take.
 
 ## Final notes
-- It does not matter how you disable the internet connection, how you go about doing that exercise is 100% your discretion. All the program checks for is a response from google.com. I unplugged the CAT6 cable from the wall.
+It does not matter how you disable the internet connection, how you go about doing that exercise is 100% your discretion. All the program checks for is a response from google.com. I unplugged the CAT6 cable from the wall.  
         
